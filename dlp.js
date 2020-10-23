@@ -4,7 +4,9 @@ function dlp() {
     setTimeout(
         function () {
             if (playing) {
-                console.log("test")
+                player.getCurrentTime().then(function(seconds) {
+                    console.log(seconds)
+                });
             }
             else {
 
