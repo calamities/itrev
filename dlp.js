@@ -1,10 +1,9 @@
-var playing1 = false;
-var player1 = new Vimeo.Player(vimeo_iframe2);
-
+console.log("-dlp-")
 function dlp() {
+    console.log('-dlp-')
     setTimeout(
         function () {
-            if (playing1) {
+            if (playing) {
                 console.log("test")
             }
             else {
@@ -13,13 +12,4 @@ function dlp() {
         }
         , 60000);
 }
-player1.on('play', function () {
-    playing1 = true;
-}); 
-player1.on('ended', function () {
-    playing1 = false; 
-}); 
-player1.on('pause', function () {
-    playing1 = false;
-}); 
 dlp();
