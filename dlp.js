@@ -1,4 +1,4 @@
-var i = 0
+var i = -1
 var dlp_player = new Vimeo.Player(vimeo_iframe);
 var isPlaying = false
 function dlp() {
