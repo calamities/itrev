@@ -1,17 +1,18 @@
 console.log("-dlp-")
 var i = 0
+var dlp_player = new Vimeo.Player(vimeo_iframe2);
+var isPlaying = false
 function dlp() {
     i++
     if (playing) {
-        player.getCurrentTime().then(function(seconds) {
-            player.getVideoTitle().then(function(title) {
-                player.getVideoId().then(function(id) {
+        dlp_player.getCurrentTime().then(function(seconds) {
+            dlp_player.getVideoTitle().then(function(title) {
+                dlp_player.getVideoId().then(function(id) {
                     console.log(seconds) 
                     console.log(title)
                     console.log(id)
                     console.log(i)
                     /*
-                    <script>
                     dataLayer.push({
                         'event': 'videoPlayerEvent',
                         'videoId': '{{VideoId}}',
@@ -23,14 +24,22 @@ function dlp() {
                 });
             });
         });
-    }
-    else {
-
-    } 
     setTimeout(
-        function () {
-            dlp();
-        }
-        , 15000);
+    function () {
+        dlp();
+    }
+    , 15000);
+    }
 }
-dlp();
+dlp_embedded_video.on('play', function () {
+    isPlaying=true
+    dlp();
+}); 
+dlp_embedded_video.on('pause', function () {
+    isPlaying=false
+    dlp();
+}); 
+dlp_embedded_video.on('ended', function () {
+    isPlaying=false
+    dlp();
+}); 
