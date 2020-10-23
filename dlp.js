@@ -31,15 +31,15 @@ function dlp() {
     , 15000);
     }
 }
-dlp_embedded_video.on('play', function () {
+dlp_player.on('play', function () {
     isPlaying=true
     dlp();
 }); 
-dlp_embedded_video.on('pause', function () {
+dlp_player.on('pause', function () {
     isPlaying=false
     dlp();
 }); 
-dlp_embedded_video.on('ended', function () {
+dlp_player.on('ended', function () {
     isPlaying=false
     dlp();
 }); 
