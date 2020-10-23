@@ -4,7 +4,7 @@ var dlp_player = new Vimeo.Player(vimeo_iframe);
 var isPlaying = false
 function dlp() {
     i++
-    if (playing) {
+    if (isPlaying) {
         dlp_player.getCurrentTime().then(function(seconds) {
             dlp_player.getVideoTitle().then(function(title) {
                 dlp_player.getVideoId().then(function(id) {
