@@ -20,7 +20,7 @@ function dlp() {
                         'videoMinutesWatched': '{{videoMinutesWatched}}'
                     });
                     */
-                }
+                });
             });
         });
     }
