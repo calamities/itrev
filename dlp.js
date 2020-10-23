@@ -5,7 +5,7 @@ function dlp() {
     if (playing) {
         player.getCurrentTime().then(function(seconds) {
             player.getVideoTitle().then(function(title) {
-                player.getVideoID().then(function(id) {
+                player.getVideoId().then(function(id) {
                     console.log(seconds) 
                     console.log(title)
                     console.log(id)
