@@ -1,4 +1,6 @@
-var i = -1
+var i = 0
+var secondsWatched = 0
+var minutesWatched = 0
 var dlp_player = new Vimeo.Player(vimeo_iframe);
 var isPlaying = false
 function dlp() {
@@ -13,6 +15,8 @@ function dlp() {
                     console.log(title)
                     console.log(id)
                     console.log(i)
+                    console.log(secondsWatched)
+                    console.log(minutesWatched)
 
                     /*
                       dataLayer.push({
@@ -33,6 +37,20 @@ function dlp() {
         }
         , 60000);
 }
+function timeIncrementer() {
+    if (isPlaying) {
+        secondsWatched++
+        if (secondsWatched === 60) {
+            secondsWatched = 0
+            minutesWatched++
+        }
+    }
+    setTimeout(
+        function () {
+            timeIncrementer();
+        }
+        , 6000);
+}
 dlp_player.on('play', function () {
     isPlaying = true
 });
@@ -44,3 +62,4 @@ dlp_player.on('ended', function () {
 });
 
 dlp();
+timeIncrementer();
