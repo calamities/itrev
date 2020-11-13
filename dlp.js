@@ -10,6 +10,7 @@ function dlp() {
             dlp_player.getVideoTitle().then(function (title) {
                 dlp_player.getVideoId().then(function (id) {
 
+                    /*
                     console.log(isPlaying)
                     console.log(seconds)
                     console.log(title)
@@ -17,16 +18,15 @@ function dlp() {
                     console.log(i)
                     console.log(secondsWatched)
                     console.log(minutesWatched)
+                    */
 
-                    /*
-                      dataLayer.push({
-                          'event': 'videoPlayerEvent',
-                          'videoId': id,
-                          'videoName': title,
-                          'videoPlayerTime': seconds,
-                          'videoMinutesWatched': i
-                      });
-                      */
+                    dataLayer.push({
+                        'event': 'videoPlayerEvent',
+                        'videoId': id,
+                        'videoName': title,
+                        'videoPlayerTime': seconds,
+                        'videoMinutesWatched': minutesWatched
+                    });
                 });
             });
         });
