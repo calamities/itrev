@@ -35,11 +35,12 @@ function dlp() {
 }
 dlp_player.on('play', function () {
     isPlaying = true
-    dlp();
 });
 dlp_player.on('pause', function () {
     isPlaying = false
 });
 dlp_player.on('ended', function () {
     isPlaying = false
-}); 
+});
+
+dlp();
