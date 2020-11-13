@@ -2,6 +2,7 @@ var i = -1
 var dlp_player = new Vimeo.Player(vimeo_iframe);
 var isPlaying = false
 function dlp() {
+    console.log('test')
     if (isPlaying) {
         i++
         dlp_player.getCurrentTime().then(function (seconds) {
