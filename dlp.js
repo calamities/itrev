@@ -49,7 +49,7 @@ function timeIncrementer() {
         function () {
             timeIncrementer();
         }
-        , 6000);
+        , 1000);
 }
 dlp_player.on('play', function () {
     isPlaying = true
