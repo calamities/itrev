@@ -67,7 +67,9 @@ dlp_player.on('ended', function () {
                 console.log(videoIdList)
                 console.log(videoIdList.videoIds)
                 console.log(id)
-                console.log(videoIdList.videoIds.indexOf(id.toString()))
+                var nextVideoIndex = videoIdList.videoIds.indexOf(id.toString()) + 1
+                var nextVideoId = videoIdList.videoIds[nextVideoIndex]
+                console.log(nextVideoId)
             });
         }
     );
