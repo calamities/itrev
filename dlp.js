@@ -62,10 +62,12 @@ dlp_player.on('ended', function () {
     //window.top.location.href = "http://videolibrary.doesvirtual.com/?video=467489204"
     $.getJSON(
         'https://cdn.jsdelivr.net/gh/calamities/itrev@main/videoList.json',
-        function (data) {
+        function (videoIdList) {
             dlp_player.getVideoId().then(function (id) {
-                console.log(data)
-                console.log(data.videoIds.indexOf(id))
+                console.log(videoIdList)
+                console.log(videoIdList.videoIds)
+                console.log(id)
+                console.log(videoIdList.videoIds.indexOf(id))
             });
         }
     );
