@@ -59,7 +59,16 @@ dlp_player.on('pause', function () {
 });
 dlp_player.on('ended', function () {
     isPlaying = false
-    window.top.location.href = "http://videolibrary.doesvirtual.com/?video=467489204"
+    //window.top.location.href = "http://videolibrary.doesvirtual.com/?video=467489204"
+    $.getJSON(
+        'https://cdn.jsdelivr.net/gh/calamities/itrev@main/videoList.json',
+        function (data) {
+            dlp_player.getVideoId().then(function (id) {
+                console.log(data)
+                console.log(data.videoIds.indexOf(id))
+            });
+        }
+    );
 });
 
 dlp();
