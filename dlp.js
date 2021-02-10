@@ -59,6 +59,17 @@ dlp_player.on('pause', function () {
 });
 dlp_player.on('ended', function () {
     isPlaying = false
+    $.getJSON(
+        'https://cdn.jsdelivr.net/gh/calamities/itrev@main/videoList.json',
+        function (videoIdList) {
+            dlp_player.getVideoId().then(function (id) {
+                var nextVideoIndex = videoIdList.videoIds.indexOf(id.toString()) + 1
+                var nextVideoId = videoIdList.videoIds[nextVideoIndex]
+                var nextVideoURL = "http://videolibrary.doesvirtual.com/?video=" + nextVideoId
+                window.top.location.href = nextVideoURL
+            });
+        }
+    );
 });
 
 dlp();
